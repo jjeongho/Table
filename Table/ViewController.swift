@@ -15,16 +15,25 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //Data의 개수
-    return 10
+    return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     //어떠한 데이터
-        let cell = UITableViewCell.init(style:.default, reuseIdentifier: "TableCellType1")
+        //let cell = UITableViewCell.init(style:.default, reuseIdentifier: "TableCellType1")
         
-        cell.textLabel?.text = "\(indexPath.row)"
+        let cell = TableViewMain.dequeueReusableCell(withIdentifier: "Type1", for: indexPath) as! Type1
+        //다시 재생할 수 있는 셀을 정의한다. indexPath 순번에 해당하는 type1을 넣는다.
+        
+        // as? as! 부모 자식 친자확인
+        
+        cell.LabelText.text = "\(indexPath.row)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("누른다! \(indexPath.row)")
     }
     
 
