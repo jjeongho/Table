@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
                 }
             }
                     task.resume()
-}
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //Data의 개수
@@ -70,10 +70,11 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
                 print("TITLE :: \(r)")
                 if let title = r["title"] as? String{
                     cell.LabelText.text = "\(r["title"]))" as! String
-                }
+            }
+    }
         }
-        
         return cell
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,14 +82,16 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     
-        func viewDidLoad() {
-            super.viewDidLoad()
-            // Do any additional setup after loading the view.
-            TableViewMain.delegate = self
-            TableViewMain.dataSource = self
-            
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        TableViewMain.delegate = self
+        TableViewMain.dataSource = self
+        
             getNews()
         }
         
-
+    
     }
+    
+
