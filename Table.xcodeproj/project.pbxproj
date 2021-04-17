@@ -17,6 +17,7 @@
 		96323BD1262409750033BB00 /* TableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96323BD0262409750033BB00 /* TableTests.swift */; };
 		96323BDC262409750033BB00 /* TableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96323BDB262409750033BB00 /* TableUITests.swift */; };
 		9646BE3A262536E70014D17B /* Type1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9646BE39262536E70014D17B /* Type1.swift */; };
+		96EFA717262B1420005A95C1 /* NewsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EFA716262B1420005A95C1 /* NewsDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		96323BDB262409750033BB00 /* TableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableUITests.swift; sourceTree = "<group>"; };
 		96323BDD262409750033BB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9646BE39262536E70014D17B /* Type1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type1.swift; sourceTree = "<group>"; };
+		96EFA716262B1420005A95C1 /* NewsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				96323BC7262409750033BB00 /* Info.plist */,
 				96323BBF262409740033BB00 /* Table.xcdatamodeld */,
 				9646BE39262536E70014D17B /* Type1.swift */,
+				96EFA716262B1420005A95C1 /* NewsDetailController.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				96323BBB262409740033BB00 /* ViewController.swift in Sources */,
 				96323BB7262409740033BB00 /* AppDelegate.swift in Sources */,
 				96323BC1262409740033BB00 /* Table.xcdatamodeld in Sources */,
+				96EFA717262B1420005A95C1 /* NewsDetailController.swift in Sources */,
 				96323BB9262409740033BB00 /* SceneDelegate.swift in Sources */,
 				9646BE3A262536E70014D17B /* Type1.swift in Sources */,
 			);

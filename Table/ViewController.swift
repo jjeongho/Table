@@ -78,9 +78,19 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         return cell
         
     }
-    
+    //1. 옵션 클릭 감지
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("누른다! \(indexPath.row)")
+    }
+    
+    //2. 쉐그웨이 부모(가나다)- 자식(가나다)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id == segue.identifier, "NewsDetail" == id {
+           if let controller == segue.destination as? NewsDetailController{
+                controller.imageUrl =
+            //여기까지함
+            }
+        }
     }
     
     
