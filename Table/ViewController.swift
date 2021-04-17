@@ -21,32 +21,32 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     //api 하루에 500개 무료
     func getNews(){
         let task = URLSession.shared.dataTask(with: URL(string: "https://newsapi.org/v2/top-headlines?country=kr&apiKey=de389344a7c3438a863b209574022d32")!) { (data, response, error) in
-                
-                if let dataJson = data{
-                    //json parsing
-                    do {
-                        let json = try JSONSerialization.jsonObject(with: dataJson, options: []) as! Dictionary<String, Any>
-                         //Dictionary
-                        let articles = json["articles"] as! Array<Dictionary<String, Any>>
-                        self.newsData = articles
-                        
-                        DispatchQueue.main.async {
-                            self.TableViewMain.reloadData()
-                        }
-                        
-//                        for (idx, value) in articles.enumerated() {
-//                            if let v = value as? Dictionary<String, Any> {
-//                                print("\(v["title"])")
-                        }
-                        
-                    catch{}
+            
+            if let dataJson = data{
+                //json parsing
+                do {
+                    let json = try JSONSerialization.jsonObject(with: dataJson, options: []) as! Dictionary<String, Any>
+                    //Dictionary
+                    let articles = json["articles"] as! Array<Dictionary<String, Any>>
+                    self.newsData = articles
+                    
+                    DispatchQueue.main.async {
+                        self.TableViewMain.reloadData()
+                    }
+                    
+                    //                        for (idx, value) in articles.enumerated() {
+                    //                            if let v = value as? Dictionary<String, Any> {
+                    //                                print("\(v["title"])")
                 }
+                
+                catch{}
             }
-                    task.resume()
+        }
+        task.resume()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //Data의 개수
+        //Data의 개수
         if let news = newsData{
             return news.count
         }
@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //어떠한 데이터
+        //어떠한 데이터
         //let cell = UITableViewCell.init(style:.default, reuseIdentifier: "TableCellType1")
         
         let cell = TableViewMain.dequeueReusableCell(withIdentifier: "Type1", for: indexPath) as! Type1
@@ -64,17 +64,19 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         
         // as? as! 부모 자식 친자확인
         let idx = indexPath.row
+        print("idx :: \(idx)")
         if let news = newsData{
             let row = news[idx]
+            print("row :: \(row)")
             if let r = row as? Dictionary<String, Any> {
                 print("TITLE :: \(r)")
                 if let title = r["title"] as? String{
-                    cell.LabelText.text = "\(r["title"]))" as! String
+                    cell.LabelText.text = title
+                }
             }
-    }
         }
         return cell
-
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -88,10 +90,10 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         TableViewMain.delegate = self
         TableViewMain.dataSource = self
         
-            getNews()
-        }
-        
-    
+        getNews()
     }
     
+    
+}
+
 
