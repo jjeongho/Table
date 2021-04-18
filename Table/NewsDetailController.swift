@@ -22,7 +22,7 @@ class NewsDetailController : UIViewController {
         
         if let img = imageUrl{
             //이미지를 가져와서 뿌린다
-            if let data =  try? Data(contentsOf: URL(string: "")!){
+            if let data =  try? Data(contentsOf: URL(string: img)!){
                 //Main Thread
                 DispatchQueue.main.async {
                     self.ImageMain.image = UIImage(data: data)
